@@ -3,9 +3,6 @@ updates:
 
   - package-ecosystem: github-actions
     directory: /
-    labels:
-      - dependencies
-      - actions
     schedule:
       day: sunday
       interval: weekly
@@ -20,21 +17,20 @@ updates:
 
   - package-ecosystem: nuget
     directory: /src/OpenTelemetry.AutoInstrumentation
-    labels:
-      - dependencies
-    ignore:
-      # these libraries are kept at the lowest supported version for compatibility on netstandard2.0
-      - dependency-name: "System.Reflection.Emit"
-      - dependency-name: "System.Reflection.Emit.Lightweight"
     schedule:
       day: sunday
       interval: weekly
     open-pull-requests-limit: 20
-  
+
+   - package-ecosystem: nuget
+    directory: /test/integration-tests/aspnet/IntegrationTests.AspNet
+    schedule:
+      day: sunday
+      interval: weekly
+    open-pull-requests-limit: 20
+
   - package-ecosystem: nuget
     directory: /test/integration-tests/IntegrationTests.Helpers
-    labels:
-      - dependencies
     schedule:
       day: sunday
       interval: weekly
