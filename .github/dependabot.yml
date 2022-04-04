@@ -9,8 +9,6 @@ updates:
 
   - package-ecosystem: nuget
     directory: /build/nuke
-    labels:
-      - dependencies
     schedule:
       day: sunday
       interval: weekly
@@ -22,7 +20,7 @@ updates:
       interval: weekly
     open-pull-requests-limit: 20
 
-   - package-ecosystem: nuget
+  - package-ecosystem: nuget
     directory: /test/integration-tests/aspnet/IntegrationTests.AspNet
     schedule:
       day: sunday
